@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind & Daisy Ui CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Phone Website</title>
+  </head>
+  <body>
+    <header>
+      <h2 class="text-4xl text-center font-medium">Phone Website</h2>
+    </header>
+
+    <main class="container mx-auto mt-8">
+      <!-- input search -->
+      <section>
+        <input
+          id="search-field"
+          type="text"
+          placeholder="search here"
+          class="input input-bordered w-full max-w-xs bg-gray-100 ml-2 lg:ml-0"
+        />
+        <button onclick=" handleClick()" class="btn btn-accent mx-2 mt-2 lg:mt-0 text-white">
+          Search
+        </button>
+
+        <!-- show more btn  -->
+      </section>
+
+      <!-- dynamic data add -->
+      <section>
+        <div id="spinner" class="text-center my-60 hidden">
+          <span class="loading loading-bars loading-lg bg-purple-700"></span>
+        </div>
+        <div
+          id="phone-container"
+          class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6"
+        ></div>
+        <div class="text-center">
+          <button
+            id="show-all-btn"
+            onclick="handleShowAll()"
+            class="mt-2 input input-bordered btn-accent text-white hidden"
+          >
+            SHOW ALL
+          </button>
+        </div>
+
+        <!-- Modal -->
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog
+          id="show_details_modal"
+          class="modal modal-bottom sm:modal-middle"
+        >
+          <form method="dialog" class="modal-box">
+            <h3 id="show-details-phone-name" class="font-bold text-lg text-center"></h3>
+            <div id="show-details-container"></div>
+            <div class="modal-action">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn bg-green-500">Close</button>
+            </div>
+          </form>
+        </dialog>
+      </section>
+    </main>
+    <footer></footer>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
