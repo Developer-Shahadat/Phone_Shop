@@ -1,7 +1,7 @@
-const loadPhone = async (search,isShowAll) =>{
+const loadPhone = async (search = 'iphone'  ,isShowAll) =>{
     const res = await fetch (`https://openapi.programming-hero.com/api/phones?search=${search}`);
     const data = await res.json();
-    const phones = data.data 
+    const phones = data.data ;
     // console.log(phones);
     displayPhones(phones,isShowAll)
 }
@@ -121,3 +121,5 @@ const showPhoneDetails = (phoneDetails) =>{
     `
     show_details_modal.showModal();
 }
+
+loadPhone()
